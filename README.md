@@ -15,4 +15,26 @@
 [![Last commit](https://img.shields.io/github/last-commit/peczenyj/isnil.svg)](https://github.com/peczenyj/isnil/commit/HEAD)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/peczenyj/isnil/blob/main/CONTRIBUTING.md#pull-request-process)
 
-golang nil checker
+Golang nil checker on steroids.
+
+Inspired by [go-x-pkg/isnil](https://github.com/go-x-pkg/isnil) and [golang-utils/isnil](https://pkg.go.dev/gitlab.com/golang-utils/isnil).
+
+## Description
+
+In golang, check if something is nil is not trivial. This packages uses `reflect` to ensure the variable contains a nil value or not.
+
+## Example
+
+```go
+var err error = (*fs.PathError)(nil)
+
+if err == nil {
+    fmt.Println("I expected this to be true, but")
+} else {
+    fmt.Println("this check fails, since err != nil")
+}
+
+if isnil.IsNil(err) {
+    fmt.Println("the solution is to use isnil package")
+}
+```
