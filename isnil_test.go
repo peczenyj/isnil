@@ -126,6 +126,8 @@ func pointerOf[T any](v T) *T {
 	return &v
 }
 
+var _ isnil.IsNiler = (*nillable)(nil)
+
 type nillable struct{}
 
 func (n *nillable) IsNil() bool { return n == nil }
