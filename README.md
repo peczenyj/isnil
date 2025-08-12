@@ -1,0 +1,2 @@
+# isnil
+golang nil checker
