@@ -3,6 +3,7 @@ package isnil_test
 import (
 	"fmt"
 	"io/fs"
+	"reflect"
 	"testing"
 	"unsafe"
 
@@ -67,6 +68,52 @@ func TestIsNil(t *testing.T) {
 			t.Parallel()
 
 			assert.Equal(t, tt.expected, isnil.IsNil(tt.value))
+		})
+	}
+}
+
+func TestIsNilable(t *testing.T) {
+	t.Parallel()
+
+	testcases := []struct {
+		label    string
+		value    reflect.Value
+		expected bool
+	}{
+		{"Invalid", reflect.ValueOf(fmt.Stringer(nil)), false},
+		{"Bool", reflect.ValueOf(true), false},
+		{"Int", reflect.ValueOf(int(1)), false},
+		{"Int8", reflect.ValueOf(int8(1)), false},
+		{"Int16", reflect.ValueOf(int16(1)), false},
+		{"Int32", reflect.ValueOf(int32(1)), false},
+		{"Int64", reflect.ValueOf(int64(1)), false},
+		{"Uint", reflect.ValueOf(uint(1)), false},
+		{"Uint8", reflect.ValueOf(uint8(1)), false},
+		{"Uint16", reflect.ValueOf(uint16(1)), false},
+		{"Uint32", reflect.ValueOf(uint32(1)), false},
+		{"Uint64", reflect.ValueOf(uint64(1)), false},
+		{"Uintptr", reflect.ValueOf(uintptr(unsafe.Pointer(nil))), false},
+		{"Float32", reflect.ValueOf(float32(1.0)), false},
+		{"Float64", reflect.ValueOf(float64(1.0)), false},
+		{"Complex64", reflect.ValueOf(complex64(complex(1, 1))), false},
+		{"Complex128", reflect.ValueOf(complex(1, 1)), false},
+		{"Array", reflect.ValueOf([1]any{1}), false},
+		{"Chan", reflect.ValueOf(make(chan struct{})), true},
+		{"Func", reflect.ValueOf(func() {}), true},
+		{"Interface", reflect.ValueOf(assert.AnError), true},
+		{"Map", reflect.ValueOf(map[int]any{}), true},
+		{"Pointer", reflect.ValueOf(pointerOf("pointer")), true},
+		{"Slice", reflect.ValueOf([]any{}), true},
+		{"String", reflect.ValueOf("string"), false},
+		{"Struct", reflect.ValueOf(struct{}{}), false},
+		{"UnsafePointer", reflect.ValueOf(unsafe.Pointer(nil)), true},
+	}
+
+	for _, tt := range testcases {
+		t.Run(tt.label, func(t *testing.T) {
+			t.Parallel()
+
+			assert.Equal(t, tt.expected, isnil.IsNilable(tt.value))
 		})
 	}
 }
