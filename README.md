@@ -1,7 +1,7 @@
 # isnil
 
 [![tag](https://img.shields.io/github/tag/peczenyj/isnil.svg)](https://github.com/peczenyj/isnil/releases)
-![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.18-%23007d9c)
+![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.23-%23007d9c)
 [![GoDoc](https://pkg.go.dev/badge/github.com/peczenyj/isnil)](http://pkg.go.dev/github.com/peczenyj/isnil)
 [![Go](https://github.com/peczenyj/isnil/actions/workflows/go.yml/badge.svg)](https://github.com/peczenyj/isnil/actions/workflows/go.yml)
 [![Lint](https://github.com/peczenyj/isnil/actions/workflows/lint.yml/badge.svg)](https://github.com/peczenyj/isnil/actions/workflows/lint.yml)
