@@ -17,7 +17,7 @@
 
 Golang nil checker on steroids.
 
-Inspired by [go-x-pkg/isnil](https://github.com/go-x-pkg/isnil) and [golang-utils/isnil](https://pkg.go.dev/gitlab.com/golang-utils/isnil).
+Inspired by [go-x-pkg/isnil](https://github.com/go-x-pkg/isnil) and [golang-utils/isnil](https://gitlab.com/golang-utils/isnil).
 
 ## Description
 
