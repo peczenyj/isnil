@@ -14,7 +14,6 @@ import (
 //nolint:govet,staticcheck //this is on purpose
 func Example() {
 	var err error = (*fs.PathError)(nil)
-
 	if err == nil {
 		fmt.Println("I expected this to be true, but")
 	} else {

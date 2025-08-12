@@ -7,7 +7,7 @@
 [![Lint](https://github.com/peczenyj/isnil/actions/workflows/lint.yml/badge.svg)](https://github.com/peczenyj/isnil/actions/workflows/lint.yml)
 [![codecov](https://codecov.io/gh/peczenyj/isnil/graph/badge.svg?token=9y6f3vGgpr)](https://codecov.io/gh/peczenyj/isnil)
 [![Report card](https://goreportcard.com/badge/github.com/peczenyj/isnil)](https://goreportcard.com/report/github.com/peczenyj/isnil)
-[![CodeQL](https://github.com/peczenyj/isnil/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/peczenyj/isnil/actions/workflows/github-code-scanning/codeql)
+[![CodeQL Advanced](https://github.com/peczenyj/isnil/actions/workflows/codeql.yml/badge.svg)](https://github.com/peczenyj/isnil/actions/workflows/codeql.yml)
 [![Dependency Review](https://github.com/peczenyj/isnil/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/peczenyj/isnil/actions/workflows/dependency-review.yml)
 [![License](https://img.shields.io/github/license/peczenyj/isnil)](./LICENSE)
 [![Latest release](https://img.shields.io/github/release/peczenyj/isnil.svg)](https://github.com/peczenyj/isnil/releases/latest)
